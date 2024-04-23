@@ -1,0 +1,31 @@
+// const multer = require("multer")
+
+// // To store multer data
+// const storage = multer.diskStorage({
+//     destination: (req, file, callback) => {
+//         callback(null, `./uploads`)
+//     },
+//     //create file  name
+//     filename: (req, file, callback) => {
+//         const filename = `image-${Date.now()}-${file.originalname}`
+//         callback(null,filename)
+//     }
+// })
+
+// // Filter
+// const fileFilter = (req, file, callback) => {
+//     const allowedMimeTypes = ['image/png','image/jpeg','image/jpg']
+//     if (allowedMimeTypes.includes(file.mimetype)) {
+//         callback(null, true)
+//     }
+//     else {
+//         callback(null, false)
+//         return callback(new Error("Invalid file type... must include png or jpeg or jpg"))
+//     }
+// }
+
+// const multerConfig = multer({
+//     storage, fileFilter
+// })
+
+// module.exports = multerConfig
