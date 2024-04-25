@@ -148,3 +148,19 @@ exports.removeUser = async (req, res) => {
         res.status(500).json("Internal server error " + err.message);
     }
 }
+
+// update user details
+exports.updateUserDetails = async (req, res) => {
+    console.log("Inside updateUserDetails");
+    const { username, password } = req.body
+    const { userID } = req.params
+    console.log(userID, username, password);
+    try {
+        const updateUser = await users.findByIdAndUpdate({ _id: userID }, { username, password })
+        await updateUser.save()
+        res.status(200).json(updateUser)
+    }
+    catch (err) {
+        res.status(401).json("Internal server Error" + err.message)
+    }
+}

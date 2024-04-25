@@ -55,4 +55,7 @@ router.delete('/quiz/delete-quiz-question/:qid/:questionId',quizController.remov
 // update quiz question - https://localhost:4000/quiz/update-quiz-question/qid/questionId
 router.put('/quiz/update-quiz-question/:qid/:questionId', quizController.updateQuizQuestion)
 
+// update user details - https://localhost:4000/update-user/qid
+router.put('/update-user/:userID', userController.updateUserDetails)
+
 module.exports = router 
